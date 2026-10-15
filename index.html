@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Reminder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto+Flex&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="overlay">
+  <div class="modal" role="dialog" aria-labelledby="modal-title">
+
+    <form class="form" onsubmit="return false">
+      <h2 class="modal-title" id="modal-title">Edit Reminder</h2>
+
+      <div class="field field--raised field--disabled w-290">
+        <label class="field__label">Reminder type</label>
+        <div class="field__control"><span class="field__value">Email</span><i class="mdi mdi-menu-down"></i></div>
+      </div>
+
+      <div class="field field--raised w-290">
+        <label class="field__label">Sailthru Template</label>
+        <div class="field__control"><span class="field__value">Prime Transactional Reminder - Virtual Live</span><i class="mdi mdi-menu-down"></i></div>
+      </div>
+
+      <div class="row-2">
+        <div class="field field--raised">
+          <label class="field__label">Send On</label>
+          <div class="field__control"><span class="field__value">10/15/2026</span><i class="mdi mdi-menu-down"></i></div>
+        </div>
+        <div class="field field--raised">
+          <label class="field__label">Send At</label>
+          <div class="field__control"><span class="field__value">03:00 PM</span><i class="mdi mdi-menu-down"></i></div>
+        </div>
+      </div>
+
+      <div class="tz">
+        <div class="label">Time zone</div>
+        <div class="tz__track">
+          <div class="tz__tick" style="left:0"></div>
+          <div class="tz__tick" style="left:33.3%"></div>
+          <div class="tz__tick" style="left:66.6%"></div>
+          <div class="tz__thumb"></div>
+        </div>
+        <div class="tz__labels small"><span>PT</span><span>MT</span><span>CT</span><span>ET</span></div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="subject">Subject line</label>
+        <input class="field__input" id="subject" placeholder=" " value="GET READY! Starting in 30 Minutes: {{ title }}">
+      </div>
+
+      <div class="editor">
+        <div class="label">Custom Message one (HTML)</div>
+        <div class="editor__toolbar"></div>
+        <div class="editor__body"></div>
+      </div>
+      <div class="editor">
+        <div class="label">Custom Message two (HTML)</div>
+        <div class="editor__toolbar"></div>
+        <div class="editor__body"></div>
+      </div>
+
+      <div class="label-group">
+        <label class="switch">
+          <input type="checkbox" id="custom-label-toggle">
+          <span class="switch__track"><span class="switch__thumb"></span></span>
+          <span>Custom button label</span>
+        </label>
+        <div class="helper" id="custom-label-off">Off — the button uses the template’s default label.</div>
+        <div class="custom-label" id="custom-label" hidden>
+          <div class="field">
+            <label class="field__label" for="button-label">Button label</label>
+            <input class="field__input" id="button-label" name="button_label" placeholder=" " autocomplete="off">
+            <div class="field__hint">Replaces the template’s default button text.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="button-url">Button URL</label>
+        <input class="field__input" id="button-url" placeholder=" " value="{{button_url}}">
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="promoted">Promoted Activity</label>
+        <input class="field__input" id="promoted" placeholder=" ">
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn--tertiary btn--danger-text">Cancel</button>
+        <button type="button" class="btn btn--tertiary">Save</button>
+        <button type="button" class="btn btn--tertiary">Save and close</button>
+      </div>
+    </form>
+
+    <div class="preview">
+      <div class="tabs">
+        <div class="tabs__list">
+          <div class="tab tab--active">PREVIEW</div>
+          <div class="tab">TEMPLATE TAGS</div>
+        </div>
+        <button type="button" class="btn btn--primary btn--sm">Send test</button>
+      </div>
+
+      <div class="email">
+        <div class="email__brand">PRIME <b>LIVE</b></div>
+        <div class="email__kicker">VIRTUAL EVENT</div>
+        <div class="email__body">
+          <div>Join our expert faculty for this CME/CE Live Webinar!<br><a href="#">Clinical Crosstalk: Integrating ICIs and Strengthening Collaborative Care in NMSC</a></div>
+          <div>Thursday, October 15, 2026 at 3:30 PM, Eastern Time / 12:30 PM, Pacific Time</div>
+          <div>Add to Calendar</div>
+          <div class="center"><a href="#">Outlook</a> | <a href="#">Google</a> | <a href="#">iCal</a></div>
+          <div>Access now:</div>
+          <div class="email__cta-wrap"><div class="email__cta" id="email-cta">Start Live Webinar</div></div>
+          <div style="margin-top:12px">If you have any problem participating in the Live Webinar, please contact support@primeinc.org. Support will be available during the entire Live Webinar and for 30 minutes after the event.</div>
+          <div class="email__rule"></div>
+          <div class="email__h">Before Attending</div>
+          <div class="dark">We recommend using the latest version of Chrome or Firefox, Opera, or Safari to get the most out of your virtual event.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
