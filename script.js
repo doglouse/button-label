@@ -13,7 +13,6 @@
 
   toggle.addEventListener("change", function () {
     var on = toggle.checked;
-    input.value = "";          // always starts empty
     group.hidden = !on;
     offHint.hidden = on;
     if (on) input.focus();
