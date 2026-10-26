@@ -66,18 +66,15 @@
       </div>
 
       <div class="label-group">
-        <label class="switch">
+        <label class="checkbox">
           <input type="checkbox" id="custom-label-toggle">
-          <span class="switch__track"><span class="switch__thumb"></span></span>
+          <span class="checkbox__box"><i class="mdi mdi-checkbox-blank-outline"></i></span>
           <span>Custom button label</span>
         </label>
-        <div class="helper" id="custom-label-off">Off — the button uses the template’s default label.</div>
-        <div class="custom-label" id="custom-label" hidden>
-          <div class="field">
-            <label class="field__label" for="button-label">Button label</label>
-            <input class="field__input" id="button-label" name="button_label" placeholder=" " autocomplete="off">
-            <div class="field__hint">Replaces the template’s default button text.</div>
-          </div>
+        <div class="field field--disabled-input" id="custom-label">
+          <label class="field__label" for="button-label">Button label</label>
+          <input class="field__input" id="button-label" name="button_label" placeholder=" " autocomplete="off" disabled>
+          <div class="field__hint" id="button-label-hint">Check “Custom button label” to edit. The button uses the template’s default label.</div>
         </div>
       </div>
 

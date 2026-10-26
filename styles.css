@@ -105,29 +105,25 @@ a:hover { color: #1147a1; }
 .editor__toolbar span:hover { background: var(--pa-primary-04a); }
 .editor__body { height: 46px; border-top: 1px solid var(--pa-line-2); border-bottom: 1px solid var(--pa-line-2); }
 
-/* Switch */
+/* Checkbox */
 .label-group { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
-.switch {
+.checkbox {
   align-self: flex-start;
-  display: inline-flex; align-items: center; gap: 12px;
-  padding: 6px 0;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 4px 0;
   font-size: 14px; line-height: 20px;
   cursor: pointer; user-select: none; position: relative;
 }
-.switch input { position: absolute; opacity: 0; pointer-events: none; inset: 0; }
-.switch__track { position: relative; width: 36px; height: 14px; background: rgba(0,0,0,.38); border-radius: 7px; flex-shrink: 0; transition: background 200ms var(--ease); }
-.switch__thumb {
-  position: absolute; top: -3px; left: -1px;
-  width: 20px; height: 20px; background: #fff; border-radius: 50%;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-  transition: transform 200ms var(--ease), background 200ms var(--ease);
-}
-.switch:hover .switch__track { background: rgba(0,0,0,.5); }
-.switch input:checked + .switch__track { background: rgba(46,125,50,.5); }
-.switch input:checked + .switch__track .switch__thumb { transform: translateX(18px); background: var(--pa-success); }
-.switch input:focus-visible + .switch__track { outline: 2px solid var(--pa-primary); outline-offset: 4px; }
-.custom-label { margin-top: 8px; }
-[hidden] { display: none !important; }
+.checkbox input { position: absolute; opacity: 0; pointer-events: none; }
+.checkbox__box { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; color: rgba(0,0,0,.6); transition: color 150ms var(--ease); }
+.checkbox__box i { font-size: 20px; }
+.checkbox:hover .checkbox__box,
+.checkbox input:checked + .checkbox__box { color: #000; }
+.checkbox input:focus-visible + .checkbox__box { outline: 2px solid var(--pa-primary); outline-offset: 2px; border-radius: 2px; }
+
+/* Disabled text field — value stays visible */
+.field__input:disabled { color: rgba(0,0,0,.38); border-bottom-style: dotted; cursor: default; }
+.field:has(.field__input:disabled) > .field__label { color: rgba(0,0,0,.38); }
 
 /* Buttons — squared 4px, all caps */
 .btn {

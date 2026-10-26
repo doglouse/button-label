@@ -1,9 +1,9 @@
 (function () {
   var DEFAULT_LABEL = "Start Live Webinar";
   var toggle = document.getElementById("custom-label-toggle");
-  var offHint = document.getElementById("custom-label-off");
-  var group = document.getElementById("custom-label");
   var input = document.getElementById("button-label");
+  var hint = document.getElementById("button-label-hint");
+  var boxIcon = document.querySelector(".checkbox__box i");
   var cta = document.getElementById("email-cta");
 
   function renderCta() {
@@ -13,8 +13,11 @@
 
   toggle.addEventListener("change", function () {
     var on = toggle.checked;
-    group.hidden = !on;
-    offHint.hidden = on;
+    input.disabled = !on;
+    boxIcon.className = "mdi " + (on ? "mdi-checkbox-marked" : "mdi-checkbox-blank-outline");
+    hint.textContent = on
+      ? "Replaces the template’s default button text."
+      : "Check “Custom button label” to edit. The button uses the template’s default label.";
     if (on) input.focus();
     renderCta();
   });
